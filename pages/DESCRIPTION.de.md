@@ -14,7 +14,7 @@ Wählt man in den Einstellungen des AddOns **Artikel (Seiten)** aus, werden die 
 
 ### Einschränkung von Modulen
 
-In den Einstellungen befindet sich Beispiel Code für den Input und Output (Developer AddOn) zum kopieren um die Zugriffseinschränkung für Module zu implementieren.
+In den Einstellungen befindet sich Beispiel Code für den Input (benötigt Developer AddOn) zum kopieren um die Zugriffseinschränkung für Module zu implementieren. Bei Angabe von Publizierungs- oder Deaktivierungsdatum im Modul wird dies im Editiermodus angezeigt, im Frontend zeigt es die Tags nicht an (im Gegensatz zur Einschränkung von Artikel).
 
 ## Voraussetzungen
 

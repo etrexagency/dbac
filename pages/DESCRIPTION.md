@@ -14,7 +14,7 @@ If you select **Articles (pages)** in the add-on settings, the meta information 
 
 ### Restriction of modules
 
-The settings contain sample code for the input and output (Developer AddOn) to copy in order to implement access restrictions for modules.
+The settings contain sample code for the input (requires Developer AddOn) to copy in order to implement access restrictions for modules. If a publication or deactivation date is specified in the module, this is displayed in edit mode, but the tags are not displayed in the frontend (compared to restriction of articles).
 
 ## Requirements
 
