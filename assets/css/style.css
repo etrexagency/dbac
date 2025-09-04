@@ -1,0 +1,54 @@
+/*
+dbac
+Diese CSS-Datei wird in der `boot.php` des AddOns `DBAC` im Backend eingebunden (rex_view::addCssFile)
+https://redaxo.org/doku/master/addon-assets
+*/
+
+.dbac_unpublished-tag,
+.dbac_deactivated-tag {
+  margin: 0px;
+  padding: 5px 10px;
+  font-size: 0.75rem;
+  color: #fff;
+  z-index: 9999999;
+}
+.dbac_tags {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  display: flex;
+}
+.dbac_unpublished-tag span,
+.dbac_deactivated-tag span {
+  font-weight: bold;
+}
+
+.dbac_deactivated-tag {
+  background: #e13636;
+}
+
+.dbac_unpublished-tag {
+  background: #1867a6;
+}
+
+.dbac_bg-unpublished,
+.dbac_bg-deactivated {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.dbac_bg-deactivated .dbac_unpublished-tag,
+.dbac_bg-unpublished .dbac_unpublished-tag,
+.dbac_bg-unpublished .dbac_deactivated-tag,
+.dbac_bg-deactivated .dbac_deactivated-tag {
+  position: absolute;
+  z-index: 99;
+}
+
+.dbac_deactivated-tag {
+  left: auto;
+  right: 0;
+}
