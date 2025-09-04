@@ -2,6 +2,10 @@
 
 ## Versionen
 
+### 1.1.1
+
+Unnötig hohe Voraussetzungen heruntergesetzt und Markdown Dateien angepasst
+
 ### 1.1.0
 
 Ermöglicht das Hinzufügen und Entfernen der Metainfo-Felder bei Medienpool und Artikel (Seiten) durch die Einstellungen. Falls eines der beiden Einstellungen aktiv ist, wird der Zugriff beim Aufrufen geprüft. Zusätzlich findet sich in den Einstellungen ein Codebeispiel, mit welchem die Zugriffseinschränkung für Module ermöglicht wird. Zugriffsbeschränkte Seiten sowie Module sind für den angemeldeten Benutzer ersichtlich und gekennzeichnet.
