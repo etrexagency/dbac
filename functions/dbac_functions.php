@@ -144,21 +144,16 @@ if (!function_exists('registerEP_SLICE_SHOW')) {
                     $showDeactivationNotice = !$isWithinDeactivation;
                 }
 
-                $htmlFrontend = "";
                 $htmlBackend = "";
                 if ($loggedIn && $showPublicationNotice) {
-                    $htmlFrontend .= '<p class="dbac_unpublished-tag">Module Publication Date — <span>' . date('d.m.Y H:i:s', $publication_timestamp) . '</span></p>';
                     $htmlBackend .= '<div class="alert alert-info">Module Publication Date — <span>' . date('d.m.Y H:i:s', $publication_timestamp) . '</span></div>';
                 }
 
                 if ($loggedIn && $showDeactivationNotice) {
-                    $htmlFrontend .= '<p class="dbac_deactivated-tag">Module Deactivation Date — <span>' . date('d.m.Y H:i:s', $deactivation_timestamp) . '</span></p>';
                     $htmlBackend .= '<div class="alert alert-danger">Module Deactivation Date — <span>' . date('d.m.Y H:i:s', $deactivation_timestamp) . '</span></div>';
                 }
                 if ($loggedIn || $showModule) {
-                    if (rex::isFrontend() && $htmlFrontend !== "") {
-                        return '<div><div class="dbac_bg-unpublished">' . $htmlFrontend . '</div>' . $output . '</div>';
-                    } else if (rex::isBackend() && $htmlBackend !== "") {
+                    if (rex::isBackend() && $htmlBackend !== "") {
 
                         // Suche den Start der panel-body und hänge das HTML direkt danach ein
                         $updatedSubject = preg_replace(

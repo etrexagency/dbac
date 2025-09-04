@@ -32,6 +32,7 @@ if (!rex_addon::get('metainfo')->hasProperty('metaTables')) {
 // Checkbox Werte auslesen
 $activateInMediapool = rex_config::get('dbac', 'mediapool');
 $activateInPages = rex_config::get('dbac', 'page');
+$activateInModules = rex_config::get('dbac', 'module');
 
 // CSS hinzufügen, wenn Module oder Pages aktiv
 if ($activateInPages) {
@@ -40,11 +41,9 @@ if ($activateInPages) {
 }
 
 /**  MODULE **/
-/*
 if ($activateInModules) {
     registerEP_SLICE_SHOW();
 }
-*/
 
 /**  MEDIENPOOL **/
 if ($activateInMediapool) {
