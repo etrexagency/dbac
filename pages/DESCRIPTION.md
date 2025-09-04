@@ -20,15 +20,15 @@ The settings contain sample code for the input and output (Developer AddOn) to c
 
 Developed on:
 
-- Redaxo version: 5.17.0
+- Redaxo version: 5.15.0
 
 Access restriction at media pool and article (page) level:
 
-- mediapool (Redaxo Standard) >= 2.10.0 for the media pool
-- metainfo (Redaxo Standard) >= 2.10.0 for entering the fields for “publication date” and “deactivation date”
-- [flatpickr](https://github.com/FriendsOfREDAXO/flatpickr) >= 8.0.4 for visual date selection when entering the date
+- mediapool (Redaxo Standard) >= 2.6.0 for the media pool
+- metainfo (Redaxo Standard) >= 2.6.0 for entering the fields for “publication date” and “deactivation date”
+- [flatpickr](https://github.com/FriendsOfREDAXO/flatpickr) >= 1.1.0 for visual date selection when entering the date
 
 Access restriction at module level (code template):
 
-- [developer](https://github.com/FriendsOfREDAXO/developer) >= 3.9.0 for module input and output
-- [MForm](https://github.com/FriendsOfREDAXO/mform) >= 8.0.0 for module input fields
+- [developer](https://github.com/FriendsOfREDAXO/developer) >= 3.6.0 for module input and output
+- [blOecks](https://github.com/FriendsOfREDAXO/bloecks) >= 4.0.0 for module code-injection in editor mode

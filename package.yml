@@ -3,7 +3,7 @@
 # Alle hier gesetzten Werte können über `$addon->getProperty($key)` abgefragt werden
 
 package: dbac # Pflichtfeld
-version: "1.1.0" # Pflichtfeld
+version: "1.1.1" # Pflichtfeld
 author: Loris Vonlanthen # Pflichtfeld für FOR-AddOns
 supportpage: https://etrex.ch # Github-Adresse des AddOns
 
@@ -12,10 +12,10 @@ requires:
   php:
     version: ">7"
   packages:
-    mediapool: "^2.10.0"
-    metainfo: "^2.10.0"
-    flatpickr: "^1.0.0"
-    developer: "^3.9.0"
+    mediapool: "^2.6.0"
+    metainfo: "^2.6.0"
+    flatpickr: "^1.1.0"
+    developer: "^3.6.0"
     bloecks: "^4.0.0"
 
 default_config:

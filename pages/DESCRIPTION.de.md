@@ -20,15 +20,15 @@ In den Einstellungen befindet sich Beispiel Code für den Input und Output (Deve
 
 Entwickelt auf:
 
-- Redaxo Version: 5.17.0
+- Redaxo Version: 5.15.0
 
 Zugriffseinschränkung auf Medienpool und Artikel (Seiten) Ebene:
 
-- mediapool (Redaxo Standard) >= 2.10.0 für den Medienpool
-- metainfo (Redaxo Standard) >= 2.10.0 für die Erfassung der Felder für "Publikationsdatum" und "Deaktivierungsdatum"
-- [flatpickr](https://github.com/FriendsOfREDAXO/flatpickr) >= 8.0.4 für die visuelle Datumauswahl bei der Angabe des Datums
+- mediapool (Redaxo Standard) >= 2.6.0 für den Medienpool
+- metainfo (Redaxo Standard) >= 2.6.0 für die Erfassung der Felder für "Publikationsdatum" und "Deaktivierungsdatum"
+- [flatpickr](https://github.com/FriendsOfREDAXO/flatpickr) >= 1.1.0 für die visuelle Datumauswahl bei der Angabe des Datums
 
 Zugriffseinschränkung auf Modul Ebene (Code Vorlage):
 
-- [developer](https://github.com/FriendsOfREDAXO/developer) >= 3.9.0 für Input und Output eines Moduls
-- [MForm](https://github.com/FriendsOfREDAXO/mform) >= 8.0.0 für Modul Eingabefelder
+- [developer](https://github.com/FriendsOfREDAXO/developer) >= 3.6.0 für Input und Output eines Moduls
+- [blOecks](https://github.com/FriendsOfREDAXO/bloecks) >= 4.0.0 für Modul Code-Injektion in Editiermodus
