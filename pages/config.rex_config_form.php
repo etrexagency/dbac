@@ -17,35 +17,35 @@ $addon = rex_addon::get('dbac');
 // Instanzieren des Formulars
 $form = rex_config_form::factory('dbac');
 
-$field = $form->addFieldset("Publikations- und Deaktivierungsdatum anzeigen für");
+$field = $form->addFieldset($addon->i18n('dbac_config_title'));
 
 // Checkboxen initialisieren
 $field = $form->addCheckboxField('mediapool');
-$field->addOption("Medienpool", 1);
+$field->addOption($addon->i18n('dbac_config_medienpool'), 1);
 
 $field = $form->addCheckboxField('page');
-$field->addOption("Artikel (Seiten)", 1);
+$field->addOption($addon->i18n('dbac_config_site'), 1);
 
 
 $field = $form->addCheckboxField('module');
-$field->addOption("Modul", 1);
+$field->addOption($addon->i18n('dbac_config_module'), 1);
 
 
 // Modul Input
-$phpInputCode = <<<'CODE'
+$phpInputCode = <<<CODE
 <?php
-	
-$idStatic = 1;
-$mformStatic = MForm::factory()
-		
+
+\$idStatic = 1;
+\$mformStatic = MForm::factory()
+        
 ->addTabElement('Inhalt', MForm::factory()
-    ->addTextField("$idStatic.title", ['label' => 'Title'])->setFull()
+    ->addTextField("\$idStatic.title", ['label' => '{$addon->i18n('dbac_visibility')}'])->setFull()
 )
 ->addTabElement('Zugriff', MForm::factory()
     ->addColumnElement(6, MForm::factory()
         /* --  PUBLICATION DATE  -- */
-        ->addTextField("$idStatic.publication_date", [
-            'label' => 'Publication Date',
+        ->addTextField("\$idStatic.publication_date", [
+            'label' => '{$addon->i18n('dbac_publication_date')}',
             'class' => 'form-control flatpickr',
             'data-enableTime' => 'true',
             'data-locale' => 'de',
@@ -53,8 +53,8 @@ $mformStatic = MForm::factory()
     )
     ->addColumnElement(6, MForm::factory()
         /* --  DEACTIVATION DATE  -- */
-        ->addTextField("$idStatic.deactivation_date", [
-            'label' => 'Deactivation Date',
+        ->addTextField("\$idStatic.deactivation_date", [
+            'label' => '{$addon->i18n('dbac_deactivation_date')}',
             'class' => 'form-control flatpickr',
             'data-enableTime' => 'true',
             'data-locale' => 'de',
@@ -62,12 +62,13 @@ $mformStatic = MForm::factory()
     )
 , true);
 
-echo $mformStatic->show();
+echo \$mformStatic->show();
 
 ?>
 CODE;
 
-$field = $form->addFieldset("Modul Input.php (für Developer AddOn)");
+
+$field = $form->addFieldset($addon->i18n('dbac_config_input_title'));
 $form->addRawField('<pre><code>' . htmlspecialchars(string: $phpInputCode) . '</code></pre>');
 
 

@@ -1,6 +1,8 @@
 
 <?php
 
+$addon = rex_addon::get('dbac');
+
 // Funktion fürs Prüfen ob ein Metainfo Feld existiert oder nicht
 if (!function_exists('metainfoFieldExists')) {
     function metainfoFieldExists(string $name, string $type = 'text'): bool
@@ -112,12 +114,12 @@ if (!function_exists('registerEP_SLICE_SHOW')) {
             }
             if ($publication_date || $deactivation_date) {
 
-                // Publication Date
-                // Wenn das Publication Date gesetzt ist, wandle es in einen Timestamp um
+                // Publikationsdatum
+                // Wenn das Publikationsdatum gesetzt ist, wandle es in einen Timestamp um
                 $publication_timestamp = $publication_date ? strtotime($publication_date) : null;
 
-                // Deactivation Date
-                // Wenn das Publication Date gesetzt ist, wandle es in einen Timestamp um
+                // Deaktivierungsdatum
+                // Wenn das Deaktivierungsdatum gesetzt ist, wandle es in einen Timestamp um
                 $deactivation_timestamp = $deactivation_date ? strtotime($deactivation_date) : null;
 
                 // Aktueller Zeitstempel
@@ -146,12 +148,13 @@ if (!function_exists('registerEP_SLICE_SHOW')) {
 
                 $htmlBackend = "";
                 if ($loggedIn && $showPublicationNotice) {
-                    $htmlBackend .= '<div class="alert alert-info">Module Publication Date — <span>' . date('d.m.Y H:i:s', $publication_timestamp) . '</span></div>';
+                    $htmlBackend .= '<div class="alert alert-info">' . $addon->i18n('dbac_general_modul') . ' ' . $addon->i18n('dbac_publication_date') . ' — <span>' . date('d.m.Y H:i:s', $publication_timestamp) . '</span></div>';
                 }
 
                 if ($loggedIn && $showDeactivationNotice) {
-                    $htmlBackend .= '<div class="alert alert-danger">Module Deactivation Date — <span>' . date('d.m.Y H:i:s', $deactivation_timestamp) . '</span></div>';
+                    $htmlBackend .= '<div class="alert alert-danger">' . $addon->i18n('dbac_general_modul') . ' ' . $addon->i18n('dbac_deactivation_date') . ' — <span>' . date('d.m.Y H:i:s', $deactivation_timestamp) . '</span></div>';
                 }
+
                 if ($loggedIn || $showModule) {
                     if (rex::isBackend() && $htmlBackend !== "") {
 
@@ -165,7 +168,7 @@ if (!function_exists('registerEP_SLICE_SHOW')) {
 
                         $ep->setSubject($updatedSubject);
                     }
-                } else if (!$loggedIn && $showModule) {
+                } else if (!$loggedIn && !$showModule) {
                     $ep->setSubject("");
                 }
             }
@@ -178,8 +181,9 @@ if (!function_exists('registerEP_ART_INIT')) {
     {
         rex_extension::register('ART_INIT', function (rex_extension_point $ep) {
             $showError = false;
-            // Publication Date
+            // Publikationsdatum
             $publication_date = (rex_article::getCurrent()->getValue("art_publication_date")) ? rex_article::getCurrent()->getValue("art_publication_date") : null;
+            // Deaktivierungsdatum
             $deactivation_date = (rex_article::getCurrent()->getValue("art_deactivation_date")) ? rex_article::getCurrent()->getValue("art_deactivation_date") : null;
             // Wenn das Publication / Deactivation Date gesetzt ist, wandle es in einen Timestamp um
             $publication_timestamp = $publication_date ? strtotime($publication_date) : null;
@@ -204,9 +208,9 @@ if (!function_exists('registerEP_ART_INIT')) {
                         if (rex_backend_login::hasSession()) {
                             // Artikel anzeigen mit Hinweis auf zukünftige Veröffentlichung
                             $date = date('d.m.Y H:i:s', $publication_timestamp);
-                            echo "<p class='dbac_unpublished-tag'>Site Publication Date — <span>" . $date . "</span></p>";
+                            echo "<p class='dbac_unpublished-tag'>" . $addon->i18n('dbac_general_site') . " " . $addon->i18n('dbac_publication_date') . " — <span>" . $date . "</span></p>";
                             $date = date('d.m.Y H:i:s', $deactivation_timestamp);
-                            echo "<p class='dbac_deactivated-tag'>Site Deactivation Date — <span>" . $date . "</span></p>";
+                            echo "<p class='dbac_deactivated-tag'>" . $addon->i18n('dbac_general_site') . " " . $addon->i18n('dbac_deactivation_date') . " — <span>" . $date . "</span></p>";
                         } else {
                             $showError = true;
                         }
@@ -217,9 +221,9 @@ if (!function_exists('registerEP_ART_INIT')) {
                     if (rex_backend_login::hasSession()) {
                         // Artikel anzeigen mit Hinweis auf zukünftige Veröffentlichung
                         $date = date('d.m.Y H:i:s', $publication_timestamp);
-                        echo "<p class='dbac_unpublished-tag'>Site Publication Date — <span>" . $date . "</span></p>";
+                        echo "<p class='dbac_unpublished-tag'>" . $addon->i18n('dbac_general_site') . " " . $addon->i18n('dbac_publication_date') . " — <span>" . $date . "</span></p>";
                         $date = date('d.m.Y H:i:s', $deactivation_timestamp);
-                        echo "<p class='dbac_deactivated-tag'>Site Deactivation Date — <span>" . $date . "</span></p>";
+                        echo "<p class='dbac_deactivated-tag'>" . $addon->i18n('dbac_general_site') . " " . $addon->i18n('dbac_deactivation_date') . " — <span>" . $date . "</span></p>";
                     } else {
                         $showError = true;
                     }
@@ -235,7 +239,7 @@ if (!function_exists('registerEP_ART_INIT')) {
                 } else if ($publication_timestamp > $current_timestamp && rex_backend_login::hasSession()) {
                     // Artikel anzeigen mit Hinweis auf zukünftige Veröffentlichung
                     $date = date('d.m.Y H:i:s', $publication_timestamp);
-                    echo "<p class='dbac_unpublished-tag'>Site Publication Date — <span>" . $date . "</span></p>";
+                    echo "<p class='dbac_unpublished-tag'>" . $addon->i18n('dbac_general_site') . " " . $addon->i18n('dbac_publication_date') . " — <span>" . $date . "</span></p>";
 
 
                     // Veröffentlichungsdatum ist in der Vergangenheit oder Gegenwart
@@ -254,7 +258,7 @@ if (!function_exists('registerEP_ART_INIT')) {
                 } else if ($deactivation_timestamp < $current_timestamp && rex_backend_login::hasSession()) {
                     // Artikel anzeigen mit Hinweis auf vergangene Veröffentlichung
                     $date = date('d.m.Y H:i:s', $deactivation_timestamp);
-                    echo "<p class='dbac_deactivated-tag'>Site Deactivation Date — <span>" . $date . "</span></p>";
+                    echo "<p class='dbac_deactivated-tag'>" . $addon->i18n('dbac_general_site') . " " . $addon->i18n('dbac_deactivation_date') . " — <span>" . $date . "</span></p>";
 
                     // Deaktivierungsdatum ist in der Zukunft oder Gegenwart
                 } else {

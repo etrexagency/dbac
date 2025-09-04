@@ -2,6 +2,10 @@
 
 ## Versionen
 
+### 1.1.2
+
+Übersetzungen hinzugefügt
+
 ### 1.1.1
 
 Unnötig hohe Voraussetzungen heruntergesetzt und Markdown Dateien angepasst
