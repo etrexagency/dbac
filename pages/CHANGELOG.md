@@ -2,6 +2,10 @@
 
 ## Versionen
 
+### 1.1.3
+
+Übersetzungen Bug gefixxt, de_de und en_gb funktionieren einwandfrei
+
 ### 1.1.2
 
 Übersetzungen hinzugefügt

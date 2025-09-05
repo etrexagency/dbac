@@ -10,25 +10,25 @@ title = Date-based Access Controller
 dbac_title = DBAC
 
 # Hauptnavi-Punkte des AddOns
-dbac_description= Description
+dbac_description = Description
 dbac_config = Settings
-dbac_changelog= Changelog
+dbac_changelog = Changelog
 
 # Namen der Eingabefelder
-dbac_visibility Visibility
-dbac_publication_date Publication Date
-dbac_deactivation_date Deactivation Date
+dbac_visibility = Visibility
+dbac_publication_date = Publication Date
+dbac_deactivation_date = Deactivation Date
 
 # Einstellungen
-dbac_config_title Show publication- and deactivation dates in
-dbac_config_medienpool Medienpool Files
-dbac_config_site Articles (Pages)
-dbac_config_module Modules
-dbac_config_input_title Module Input.php (for Developer AddOn)
+dbac_config_title = Show publication- and deactivation dates in
+dbac_config_medienpool = Medienpool Files
+dbac_config_site = Articles (Pages)
+dbac_config_module = Modules
+dbac_config_input_title = Module Input.php (for Developer AddOn)
 
 # Allgemein
-dbac_general_modul Module
-dbac_general_site Site
+dbac_general_modul = Module
+dbac_general_site = Site
 
 # Benennung für die Addonrechte
 # sichtbar innerhalb der REDAXO-Administration unter `Benutzer > Rollen > Allgemein`
