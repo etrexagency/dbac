@@ -45,9 +45,15 @@ if ($activateInPages && rex::isFrontend()) {
     });
 }
 
+
 /**  MODULE **/
 if ($activateInModules) {
     registerEP_SLICE_SHOW();
+}
+
+$dataLocale = "de";
+if (str_contains(rex_i18n::getLocale(), "en")) {
+    $dataLocale = "en";
 }
 
 /**  MEDIENPOOL **/
@@ -56,9 +62,9 @@ if ($activateInMediapool) {
     // MetaInfo Feld hinzufügen: Legende
     if (!metainfoFieldExists('med_legend_access_control', 'legend')) {
         rex_metainfo_add_field(
-            'Zugriffskontrolle',
+            $addon->i18n('visibility'),
             'med_legend_access_control',
-            1,
+            0,
             '',
             12,
             '',
@@ -72,10 +78,10 @@ if ($activateInMediapool) {
     // MetaInfo Feld hinzufügen: Publication date
     if (!metainfoFieldExists('med_publication_date', 'text')) {
         rex_metainfo_add_field(
-            'Veröffentlichungs-Datum',
+            $addon->i18n('publication_date'),
             'med_publication_date',
-            2,
-            'class="form-control flatpickr" data-enableTime=true data-locale=en',
+            1,
+            'class="form-control flatpickr" data-enableTime=true data-locale=' . $dataLocale,
             1,
             '',
             '',
@@ -89,10 +95,10 @@ if ($activateInMediapool) {
     if (!metainfoFieldExists('med_deactivation_date', 'text')) {
         // Dann das Feld anlegen
         rex_metainfo_add_field(
-            'Deaktivierungs-Datum',
+            $addon->i18n('deactivation_date'),
             'med_deactivation_date',
-            3,
-            'class="form-control flatpickr" data-enableTime=true data-locale=de',
+            2,
+            'class="form-control flatpickr" data-enableTime=true data-locale=' . $dataLocale,
             1,  // 1 = Text
             '',
             '',
@@ -123,9 +129,9 @@ if ($activateInPages) {
     // MetaInfo Feld hinzufügen: Legende
     if (!metainfoFieldExists('art_legend_access_control', 'legend')) {
         rex_metainfo_add_field(
-            'Zugriffskontrolle',
+            $addon->i18n('visibility'),
             'art_legend_access_control',
-            1,
+            0,
             '',
             12,
             '',
@@ -140,10 +146,10 @@ if ($activateInPages) {
     // MetaInfo Feld hinzufügen: Publication date
     if (!metainfoFieldExists('art_publication_date', 'text')) {
         rex_metainfo_add_field(
-            'Veröffentlichungs-Datum',
+            $addon->i18n('publication_date'),
             'art_publication_date',
-            2,
-            'class="form-control flatpickr" data-enableTime=true data-locale=en',
+            1,
+            'class="form-control flatpickr" data-enableTime=true data-locale=' . $dataLocale,
             1,
             '',
             '',
@@ -157,10 +163,10 @@ if ($activateInPages) {
     if (!metainfoFieldExists('art_deactivation_date', 'text')) {
         // Dann das Feld anlegen
         rex_metainfo_add_field(
-            'Deaktivierungs-Datum',
+            $addon->i18n('deactivation_date'),
             'art_deactivation_date',
-            3,
-            'class="form-control flatpickr" data-enableTime=true data-locale=de',
+            2,
+            'class="form-control flatpickr" data-enableTime=true data-locale=' . $dataLocale,
             1,  // 1 = Text
             '',
             '',
