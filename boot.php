@@ -34,10 +34,15 @@ $activateInMediapool = rex_config::get('dbac', 'mediapool');
 $activateInPages = rex_config::get('dbac', 'page');
 $activateInModules = rex_config::get('dbac', 'module');
 
-// CSS hinzufügen, wenn Module oder Pages aktiv
-if ($activateInPages) {
-    $cssUrl = rex::getServer() . 'assets/addons/dbac/css/style.css';
-    echo '<link rel="stylesheet" href="' . $cssUrl . '">';
+// CSS im Frontend einbinden wenn in den Einstellungen Seiten aktiviert
+if ($activateInPages && rex::isFrontend()) {
+    rex_extension::register('OUTPUT_FILTER', function (rex_extension_point $ep) use ($addon) {
+        $cssUrl = rex::getServer() . 'assets/addons/dbac/css/style.css?v=' . time();
+        $cssTag = '<link rel="stylesheet" href="' . $cssUrl . '">' . PHP_EOL;
+
+        // Stylesheet korrekt im <head> einfügen
+        return str_replace('</head>', $cssTag . '</head>', $ep->getSubject());
+    });
 }
 
 /**  MODULE **/
