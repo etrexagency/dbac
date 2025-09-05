@@ -36,7 +36,7 @@ $activateInModules = rex_config::get('dbac', 'module');
 
 // CSS hinzufügen, wenn Module oder Pages aktiv
 if ($activateInPages) {
-    $cssUrl = rex_url::addonAssets('dbac', 'css/style.css') . '?v=' . time();
+    $cssUrl = rex::getServer() . 'assets/addons/dbac/css/style.css';
     echo '<link rel="stylesheet" href="' . $cssUrl . '">';
 }
 
