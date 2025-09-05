@@ -3,7 +3,7 @@
 # Alle hier gesetzten Werte können über `$addon->getProperty($key)` abgefragt werden
 
 package: dbac # Pflichtfeld
-version: "1.1.4" # Pflichtfeld
+version: "1.1.5" # Pflichtfeld
 author: Loris Vonlanthen # Pflichtfeld für FOR-AddOns
 supportpage: https://etrex.ch # Github-Adresse des AddOns
 
