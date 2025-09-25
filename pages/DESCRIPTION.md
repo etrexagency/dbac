@@ -30,5 +30,4 @@ Access restriction at media pool and article (page) level:
 
 Access restriction at module level (code template):
 
-- [developer](https://github.com/FriendsOfREDAXO/developer) >= 3.6.0 for module input and output
 - [blOecks](https://github.com/FriendsOfREDAXO/bloecks) >= 4.0.0 for module code-injection in editor mode
