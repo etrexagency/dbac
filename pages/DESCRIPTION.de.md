@@ -30,5 +30,4 @@ Zugriffseinschränkung auf Medienpool und Artikel (Seiten) Ebene:
 
 Zugriffseinschränkung auf Modul Ebene (Code Vorlage):
 
-- [developer](https://github.com/FriendsOfREDAXO/developer) >= 3.6.0 für Input und Output eines Moduls
 - [blOecks](https://github.com/FriendsOfREDAXO/bloecks) >= 4.0.0 für Modul Code-Injektion in Editiermodus
