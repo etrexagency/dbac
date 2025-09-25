@@ -2,9 +2,13 @@
 
 ## Versionen
 
-### 1.1.3
+### 1.1.8
 
-Übersetzungen Bug gefixxt, de_de und en_gb funktionieren einwandfrei
+Festgestellt, dass das developer-AddOn für dieses AddOn nicht benötigt wird.
+
+### 1.1.3 - 1.1.7
+
+Bugfixes
 
 ### 1.1.2
 
