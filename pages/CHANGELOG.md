@@ -2,6 +2,10 @@
 
 ## Versionen
 
+### 1.1.10
+
+- Removed metainfo callback
+
 ### 1.1.9
 
 - Package Dependency Bug behoben (@artofproduction)

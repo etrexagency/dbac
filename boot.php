@@ -71,7 +71,7 @@ if ($activateInMediapool) {
             '',
             '',
             '',
-            'med_'
+            ''
         );
     }
 
@@ -87,7 +87,7 @@ if ($activateInMediapool) {
             '',
             '',
             '',
-            'med_'
+            ''
         );
     }
 
@@ -100,6 +100,7 @@ if ($activateInMediapool) {
             2,
             'class="form-control flatpickr" data-enableTime=true data-locale=' . $dataLocale,
             1,  // 1 = Text
+            '',
             '',
             '',
             '',
@@ -138,7 +139,7 @@ if ($activateInPages) {
             '',
             '',
             '',
-            'art_'
+            ''
         );
     }
 
@@ -155,7 +156,7 @@ if ($activateInPages) {
             '',
             '',
             '',
-            'med_'
+            ''
         );
     }
 
@@ -168,6 +169,7 @@ if ($activateInPages) {
             2,
             'class="form-control flatpickr" data-enableTime=true data-locale=' . $dataLocale,
             1,  // 1 = Text
+            '',
             '',
             '',
             '',
