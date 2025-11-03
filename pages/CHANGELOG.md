@@ -2,6 +2,14 @@
 
 ## Versionen
 
+### 1.1.9
+
+- Package Dependency Bug behoben (@artofproduction)
+
+### 1.1.4 - 1.1.8
+
+Kleine Bugs gefixt
+
 ### 1.1.3
 
 Übersetzungen Bug gefixxt, de_de und en_gb funktionieren einwandfrei
